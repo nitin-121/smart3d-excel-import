@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Smart3D.ExcelImport</RootNamespace>
+    <AssemblyName>Smart3D.ExcelImport</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <!-- Prevent SDK-style project from auto-generating assembly attributes
+         that conflict with our explicit AssemblyInfo.cs -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <!-- Smart3D V14 API References (resolved via SMART3D_HOME env var) -->
+  <ItemGroup>
+    <Reference Include="Ingr.SP3D.Common.Middle">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.Common.Middle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ingr.SP3D.Content">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.Content.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ingr.SP3D.Content.DataAccess">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.Content.DataAccess.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ingr.SP3D.Content.ServiceManager">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.Content.ServiceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ingr.SP3D.UI">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ingr.SP3D.SystemsAndSpecifications">
+      <HintPath>$(SMART3D_HOME)\Ingr.SP3D.SystemsAndSpecifications.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- NuGet Packages -->
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.0" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+  <!-- .NET Framework assemblies -->
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <!-- Compile all .cs files EXCEPT Properties/AssemblyInfo.cs (handled separately) -->
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="Properties\*.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+
+</Project>
