@@ -1,0 +1,6 @@
+ObjectName,ObjectType,AttributeName,AttributeValue
+P-101,Equipment,DesignPressure,150
+P-101,Equipment,DesignTemperature,200
+100-PL-001,Pipeline,OperatingPressure,75
+100-PR-001,PipeRun,InsulationThickness,50
+E-201,Equipment,DesignCapacity,5000
