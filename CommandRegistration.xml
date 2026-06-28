@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Smart3D V14 Command Registration File -->
+<!-- Place this file in the Smart3D CommandFiles folder to register the command -->
+<CommandTable>
+  <Command>
+    <Name>BulkPropertyImportFromExcel</Name>
+    <DisplayName>Bulk Property Import from Excel</DisplayName>
+    <Description>Import object properties (PipeRun, Pipeline, Equipment) from an Excel spreadsheet</Description>
+    <Assembly>Smart3D.ExcelImport.dll</Assembly>
+    <ClassName>Smart3D.ExcelImport.ExcelImportCommand</ClassName>
+    <EntryPoint>Execute</EntryPoint>
+    <Category>Custom Commands</Category>
+    <Visible>true</Visible>
+    <Enabled>true</Enabled>
+  </Command>
+</CommandTable>
